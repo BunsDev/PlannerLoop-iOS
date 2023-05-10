@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H1922" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Employee" representedClassName="Employee" parentEntity="Resource" syncable="YES" codeGenerationType="class">
+        <attribute name="surname" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Machine" representedClassName="Machine" parentEntity="Resource" syncable="YES" codeGenerationType="class"/>
+    <entity name="Oprtn" representedClassName="Oprtn" syncable="YES" codeGenerationType="class">
+        <attribute name="deadline" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="end" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="identifier" optional="YES" attributeType="String"/>
+        <attribute name="index" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="instTime" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="iterations" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="iterDuration" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="machineID" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="priority" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="start" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="taskID" optional="YES" attributeType="String"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="OprtnEvent" inverseName="operation" inverseEntity="OprtnEvent"/>
+    </entity>
+    <entity name="OprtnEvent" representedClassName="OprtnEvent" syncable="YES" codeGenerationType="class">
+        <attribute name="confirmed" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="end" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="identifier" optional="YES" attributeType="String"/>
+        <attribute name="iterations" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="start" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="operation" maxCount="1" deletionRule="Nullify" destinationEntity="Oprtn" inverseName="events" inverseEntity="Oprtn"/>
+    </entity>
+    <entity name="Resource" representedClassName="Resource" syncable="YES" codeGenerationType="class">
+        <attribute name="disponibilityDay" optional="YES" attributeType="String"/>
+        <attribute name="fridayActivated" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="fridayEnd" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="fridayStart" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="identifier" optional="YES" attributeType="String"/>
+        <attribute name="mondayActivated" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="mondayEnd" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="mondayStart" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="saturdayActivated" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="saturdayEnd" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="saturdayStart" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="sundayActivated" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="sundayEnd" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="sundayStart" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="thursdayActivated" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="thursdayEnd" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="thursdayStart" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="tuesdayActivated" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="tuesdayEnd" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="tuesdayStart" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="wednesdayActivated" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="wednesdayEnd" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="wednesdayStart" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="Template" representedClassName="Template" syncable="YES" codeGenerationType="class">
+        <attribute name="instTime" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="iterations" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="iterDuration" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="machineID" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="priority" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="Employee" positionX="-424.51953125" positionY="155.984375" width="128" height="58"/>
+        <element name="Machine" positionX="-421.66015625" positionY="279.95703125" width="128" height="43"/>
+        <element name="Oprtn" positionX="-215.09375" positionY="278.671875" width="128" height="253"/>
+        <element name="OprtnEvent" positionX="-32.64453125" positionY="274.66015625" width="128" height="133"/>
+        <element name="Resource" positionX="-683.05859375" positionY="-7.44140625" width="128" height="403"/>
+        <element name="Template" positionX="-64.171875" positionY="8.59765625" width="128" height="133"/>
+    </elements>
+</model>
